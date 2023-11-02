@@ -6,12 +6,13 @@
       body {
         background-color: rgb(74, 22, 139);
       }
-      h1, p, label, input::placeholder {
+      h1, p, button, input::placeholder {
         font-family: cursive;
       }
-      button {
+      .messageSubmitButton {
         width: 100px;
-        height: 50px;
+        height: 25px;
+        text-align: center;
       }
       .margin {
         margin: 10px;
@@ -57,11 +58,16 @@
       <img src = "https://i.imgur.com/BKsKaQQ.png" class = "margin" alt = "gaming">
     </div>
 
-    <div class = "container" style = "margin-top: 50px">
-      <form method = "POST" id = "sheetdb-form" action = "https://sheetdb.io/api/v1/70rn8fx5ihirc">
+    <div class = "container" style = "margin-top: 25px; background-color: black;">
+      <form
+      method = "POST"
+      id = "sheetdb-form"
+      style = "margin-top: 25px; margin-bottom: 25px"
+      action = "https://sheetdb.io/api/v1/70rn8fx5ihirc"
+      >
         <input type = "text" placeholder = "Your Name" name = "data[name]"><br><br>
         <input type = "text" placeholder = "Your Message" name = "data[message]"><br><br>
-        <button type = "submit">Submit</button>
+        <button type = "submit" class = "messageSubmitButton">Submit</button>
       </form>
     </div>
 
@@ -74,14 +80,11 @@
             body: new FormData(document.getElementById("sheetdb-form")),
         }).then(
             response => response.json()
-        ).then((html) => {
-          // you can put any JS code here
-          alert('success')
-        });
+        ).then((html) => {});
       });
     </script>
       
-    <p class = "text">
+    <p class = "text" style = "margin-top: 25px">
       you can contact me. on. (<a href = "https://mail.google.com/mail/u/0/">Email</a>, <a href = "https://www.instagram.com/">IG</a>, <a href = "https://discord.com/">Discord</a>, ect.)
     </p>
       
